@@ -1,4 +1,4 @@
-The location where the height changes only appera on the these two index
+The location where the height changes only appear on the these two index
 So when we traverse these location, only we maintain a PriorityQueue get the local max.
 
 
