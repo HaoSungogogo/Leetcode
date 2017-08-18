@@ -9,3 +9,5 @@ if (root.right != null) {dfs}
 
 Using BFS and Topological Sort -> the vertex could be traverse in order if it does not have circle
 Maintain an indegree array, when the indegree of vertex decreases to 0, add it  
+
+Only dereference can retain value in the recursion.
