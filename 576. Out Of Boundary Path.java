@@ -43,7 +43,7 @@ class Solution {
         int[][] count = new int[m][n];
         count[i][j] = 1;
         for (int k = 0; k < N; k++) {
-            int[][] temp = new int[m][n];
+            int[][] temp = new int[m][n];    // 3D Dp
             for (int x = 0; x < m; x++) {
                 for (int y = 0; y < n; y++) {
                     if (count[x][y] != 0) {
