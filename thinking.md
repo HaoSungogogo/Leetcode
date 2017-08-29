@@ -18,3 +18,30 @@ Normal :dp[i][j] = dp[i- 1][j] + dp[i][j - 1];
 int nx = x + d[0];
 int ny = y + d[1];
 temp[nx][ny] = (temp[nx][ny] + count[x][y])
+
+
+DFS + Memorization
+recursion + map to store the result of subproblem
+First to check out whether this map has this value. if has, return directly. if not, recursion
+
+public class Solution {
+  public long fibonacci(int K) {
+    if (K < 0) {
+      return 0;
+    }
+    Map<Integer, Long> map = new HashMap<>();
+    map.put(0, 0L);
+    map.put(1, 1L);
+    return dfs(K, map);
+  }
+  private long dfs(int target, Map<Integer, Long> map) {
+    Long l = map.get(target);
+    if (l != null) {
+      return l;
+    }
+    long one = dfs(target - 1, map);
+    long two = dfs(target - 2, map);
+    map.put(target, one + two);
+    return one + two;
+  }
+}
