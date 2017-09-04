@@ -1,6 +1,8 @@
 Using stack to record the index.
 max = Math.max(max, i - stack.peekFirst());
 
+Record the last element that is mismatched.
+
 class Solution {
     public int longestValidParentheses(String s) {
         if(s == null || s.length() == 0) {
