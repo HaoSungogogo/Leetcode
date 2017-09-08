@@ -45,3 +45,9 @@ public class Solution {
     return one + two;
   }
 }
+
+stack
+1. 32. Longest Valid Parentheses -> Parentheses problem. store -1 first to record the mismatched index and store the index of Parentheses
+   301. Remove Invalid Parentheses -> using counter to model the stack
+2. 84. Largest Rectangle in Histogram -> store the index of Rectangle and maintain the height of ascending order.
+3. 239. Sliding Window Maximum -> if the current is larger than the head of stack. poll the head (又大又新的代替)
