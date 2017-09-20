@@ -7,36 +7,32 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+Naive way to maintain the global viarable to record the first and second TreeNode.
+Do not pass into the recursion function parameter, changing reference does not change.
 
-Only maintain the global variable, only dereference can retain value in the recursion.
-
-public class Solution {
-    TreeNode pre = new TreeNode(Integer.MIN_VALUE);
-    TreeNode one = null;
-    TreeNode two = null;
+Space complexity: O(n)
+class Solution {
+    private TreeNode firstNode = null;
+    private TreeNode secondNode = null;
+    private TreeNode preNode = new TreeNode(Integer.MIN_VALUE);
     public void recoverTree(TreeNode root) {
-        if (root == null) {
-            return;
-        }
         inorder(root);
-        int temp = one.val;
-        one.val = two.val;
-        two.val = temp;
-
+        int temp = firstNode.val;
+        firstNode.val = secondNode.val;
+        secondNode.val = temp;
     }
     private void inorder(TreeNode root) {
         if (root == null) {
             return;
         }
         inorder(root.left);
-        if (root.val <= pre.val && one == null) {
-            one = pre;
+        if (firstNode == null && preNode.val >= root.val) {
+            firstNode = preNode;
         }
-        if (root.val <= pre.val && one != null) {
-            two = root;
-
+        if (firstNode != null && preNode.val >= root.val) {
+            secondNode = root;
         }
-        pre = root;
+        preNode = root;
         inorder(root.right);
     }
 }
