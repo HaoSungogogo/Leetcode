@@ -51,3 +51,9 @@ stack
    301. Remove Invalid Parentheses -> using counter to model the stack
 2. 84. Largest Rectangle in Histogram -> store the index of Rectangle and maintain the height of ascending order.
 3. 239. Sliding Window Maximum -> if the current is larger than the head of stack. poll the head (又大又新的代替)
+
+subarray sum problem -> way of thinking
+1. maintain a prefix-sum array
+2. Using hashmap to store the prefix sum -> map.get(cursum - target)
+    map.put(0, -1)
+    lc525 and lc325

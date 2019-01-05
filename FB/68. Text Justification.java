@@ -1,68 +1,49 @@
 class Solution {
     public List<String> fullJustify(String[] words, int maxWidth) {
-        if (words == null) {
-            return null;
-        }
         List<String> list = new ArrayList<>();
-        if (words.length == 0) {
-            return list;
-        }
-        int[] count = new int[words.length];
-        for (int i = 0; i < count.length; i++) {
-            count[i] = words[i].length();
-        }
-        int start = count[0];
-        int num = 1;
-        int i = 1;
-        while (i <= count.length) {
-            while (i < count.length && start + 1 + count[i] <= maxWidth) {
-                start += 1 + count[i];
-                num++;
-                i++;
+        int cur = 0;
+        while (cur < words.length) {
+            int len = words[cur].length();
+            int next = cur + 1;
+            // Try to put the string as much as possible
+            while (next < words.length && len + words[next].length() + 1 <= maxWidth) {
+                len += words[next].length() + 1;
+                next++;
             }
-            if (i == count.length) {
-                StringBuilder sb = new StringBuilder();
-                for (int j = i - num; j < i - 1; j++) {
-                    sb.append(words[j]);
-                    sb.append(" ");
-                }
-                sb.append(words[i - 1]);
-                for (int k = maxWidth - sb.length(); k > 0; k--) {
-                    sb.append(" ");
-                }
-                list.add(sb.toString());
-                break;
-            }
-            int diff = maxWidth - start;
             StringBuilder sb = new StringBuilder();
-            if (num == 1) {
-                sb.append(words[i - 1]);
-                while (diff > 0) {
+            // if it is the last line or only permit one letter to put in -> left justified
+            if (next == words.length || next - cur == 1) {
+                for (int i = cur; i < next; i++) {
+                    sb.append(words[i]);
                     sb.append(" ");
-                    diff--;
+                }
+                sb.deleteCharAt(sb.length() - 1);
+                for (int k = sb.length(); k < maxWidth; k++) {
+                    sb.append(' ');
                 }
             } else {
-                int spaceNum = diff / (num - 1);
-                int spaceRedundant = diff % (num - 1);
-                for (int j = i - num; j < i - 1; j++) {
-                    sb.append(words[j]);
-                    sb.append(" ");
-                    int counter = spaceNum;
-                    while(counter > 0) {
+              // left justified and right justified
+                int spaceSum = maxWidth - len;
+                int count = next - cur;
+                int spaceEach = spaceSum / (count - 1);
+                int spaceRedt = spaceSum % (count - 1);
+                for (int i = 0; i < count; i ++) {
+                    if (i < count - 1) {
+                        sb.append(words[cur + i]);
                         sb.append(" ");
-                        counter--;
-                    }
-                    if (spaceRedundant > 0) {
-                        spaceRedundant--;
-                        sb.append(" ");
+                        for (int k = 0; k < spaceEach; k++) {
+                            sb.append(" ");
+                        }
+                        if (i < spaceRedt) {
+                            sb.append(" ");
+                        }
+                    } else {
+                        sb.append(words[cur + count - 1]);
                     }
                 }
-                sb.append(words[i - 1]);
             }
             list.add(sb.toString());
-            num = 1;
-            start = count[i];
-            i++;
+            cur = next;
         }
         return list;
     }

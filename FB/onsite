@@ -1,0 +1,34 @@
+电面加店面：
+树变双链表
+数岛
+仨树合为零
+
+滴扣的味
+收集水
+会议室
+
+
+今天面试时头疼的厉害，状态不太好。. 1point3acres.com/bbs
+第一轮： phd research + behavior第二轮： 1. LC饵事宜， 2. LC罢石耙， 3. merge two arrays of sorted intervals.
+第三轮： 1. 移零花式解， 2，largest k elements in an array要求用priorityqueue解， 这两道竟然都写出了一点小bug，感觉跪了
+第四轮： 1. LC三要死，输出得是flatten list. 要求不能先求出List<List<>>,再把List<List<>> flatten 成List。 这轮没答好，做完以后只剩五分钟，随便问了几个问题。
+第五轮:   ML Design: ads ranking
+
+
+
+10月6号UDay昂赛
+
+一面：印度大哥
+给两棵BST和一个target sum，找到两棵树里所有node pair加起来等于target的。
+讨论了半天各种解法（包括复杂度）说用iterator最好，所以自己先写了个BST iterator，再用自己写的iterator来解题。
+所以相当于一道题写了两道题的代码。
+
+二面：白人姐姐.1point3acres缃�
+行为问题，但是狂问简历，感觉并不太好。深感BQ还是套路深，假装问项目技术细节其实还是BQ，还是得好好准备。
+最后只问了问利口石歧，只讲思路 鏉ユ簮涓€浜�.涓夊垎鍦拌鍧�.
+
+三面：国人小哥
+Largest subtree sum
+利口尔唔叁. visit 1point3acres.com for more.
+
+大概过了3个工作日要了ref，然后再过了一周约电话说congrats.

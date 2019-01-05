@@ -1,0 +1,102 @@
+73
+valid BST
+find celebrity
+297
+121
+123
+67
+76
+206
+211
+写一个random 输出城市名字的函数。给了一个城市的map，格式：城市名，人口数。根据城市人口数的比例，
+比如 map：DC 90， SF 50， LA 60，城市输出的概率分别是：90/200， 50/200， 60/200. 不停的掉用这个函数,按照概率来输出城市的名字
+301
+76
+今天下午五点刚面的。三哥，还好口音没有很严重， facebook website 数据 和 recommendation 相关 team的。
+唉刷的题太少，今天面的老题但是我没准备过，print bst in vertical order. 只做了一题也没什么followup，虚。大部分时间在和三哥讨论加嘴上跑test case。
+求了过column index的提示后，用dfs + hashmap做完的。后来同学跟我说应该level order因为dfs是先左后右，如果tree node太多很复杂的时候顺序会有点奇怪。唉因为前面跑一个test case花了太久时间估计也是没cover到edge case之类的。
+
+
+2. 这个时候就剩15分钟了，又来了一道题。是替换字母，特别简单，就递归一下就可以了
+给一个Map<String, List<String>> sub. 其中key是要被替换的字母，list可以替换的一堆字母，输出所有可能
+E.G. 'a' -> {'b', 'c', 'd'}
+那么一个word例如是abc，所有a都要被替换，那么输出就是{’abc','bbc','dbc'}
+但是！！主要不是写程序！写程序就写了5分钟吧，分析复杂度分析了15分钟，有点蒙，讨论了好久也不知道自己说的复杂度对不对，感觉他对我的回答不是那么满意。。
+
+decode ways
+15
+75
+278
+56
+155
+39
+3sum
+8queue
+251
+285
+158
+325
+
+415
+640
+560 （normal map， positive two pointer）
+304
+
+
+(445)
+
+第一题：First Bad Version
+
+第二题：Divide Two Integers
+schedule I and II
+
+
+
+给出一个平衡二叉树, 一个 target value 找到 the previous element.
+用两种方法解.
+其中 递归的方式 写出 没有 bug 的 code.
+然而我跪在了 bug 上.
+
+
+
+
+2017(10-12月) 码农类 硕士 全职@Facebook - 内推 - 技术电面 |Otherfresh grad应届毕业生
+发个半个小时之前的脸家店面， 面试官是国人小哥，人很好，一上来就做题，只是我两全程操着 poor English聊天&#128514;。。。
+第一道会议室，就按利扣解法写的，然后问了时间复杂度
+然后 follow up 会议室2， 用了两种解法，一种 min heap，一种分别 sort start 和 en，然后 two pointer， 接下来就很尴尬了
+小哥问我第二种解法比第一种好在哪里。。。瞎答一通
+然后问我第二种解法能不能 improve 扫数组的过程，我一脸懵逼，凭直觉说可以 binary search
+最后小哥问如果 binary search 了，时间复杂度是什么， 我说最好直接到底了，O（logn），最坏每次加一，O（nlogn）， 又问 average 的复杂度是多少，
+我不知道怎么说，支支吾吾了半天， 然后小哥叫我分析一下， 我写了个式子然后小哥说可以了
+
+感觉总体还是比较紧张，尤其后面问 improve 之后的那十几分钟。。。
+
+
+
+
+
+这个应该是一个面经的变形，面经原题是Random Pick in an array with given Weights,
+就是每个offset有自己的的weights，然后按照weights的概率return相对应的index
+
+自己的做法是create一个cumulative array，然后random generate 一个number mod by total weights，
+然后做binary search，觉得楼主这题可以做类似的做法
+
+349
+350
+
+
+第一题找到一个二叉树最浅的根.BFS搜到没儿子的点就直接返回,秒了
+第二题是莱特扣的玖仕伞.三个for loop遍历可行点的位置.一开始忘判断每一节一开始不能为0,比如192.168.01.1这种,后来面试官提示下加上了个if.
+一周后告诉我挂了.是没headcount了么.感觉自己面的挺好的
+
+46
+
+上周面完FB家电面，听口音似乎是个印度人，说他是Instagram工作，都没来得及问我背景和介绍，就直接上题目
+-google 1point3acres
+碰到了一个新题，一个二维数组，每一行都只有0和1，前面部分是0，后一部分是1，找到数组里面最左边的1的那一列数。
+用了两种方法，对每一行二分找到第一个1，然后找到整个数组的最小的第一个1的列数。O(mlogn). more info on 1point3acres.com
+后来说不是最优的，然后改进用O(m+n)的算法，找到第一行第一个1，然后往下找，是0就continue，是1的话往前找。
+
+最后对比了一下两种方法的优劣，哪种方法在什么情况下比较好 或者哪种情况持续比另一种好。
+
+直接没结果。。。大概是跪了。。。

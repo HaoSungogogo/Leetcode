@@ -19,3 +19,7 @@ class Solution {
         return left;
     }
 }
+
+The first thing to pay attention to is that we always get the smaller one, so
+left = mid and mid = left + (right - left + 1) / 2;
+The second thing is that we are more likely to come across overflow, we should x / mid
